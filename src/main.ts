@@ -8,7 +8,7 @@ async function bootstrap() {
   app.enableCors(); // to allow interactions with React
   app.use(helmet()); // middleware to protect from basic types of attacks
   app.useGlobalPipes(new ValidationPipe({ whitelist: true, transform: true }));
-  await app.listen(8080);
+  await app.listen(process.env.PORT || 8080);
 }
 
 bootstrap();
